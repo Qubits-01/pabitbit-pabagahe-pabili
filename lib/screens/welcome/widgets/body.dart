@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../constants.dart';
-import './background.dart';
-import './rounded_button.dart';
+import 'package:pabitbit_pabagahe_pabili/constants.dart';
+import 'package:pabitbit_pabagahe_pabili/screens/welcome/widgets/background.dart';
+import 'package:pabitbit_pabagahe_pabili/widgets/rounded_button.dart';
 
 class Body extends StatelessWidget {
   @override
