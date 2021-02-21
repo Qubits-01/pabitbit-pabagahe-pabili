@@ -45,6 +45,19 @@ class MyHome extends StatelessWidget {
       // body: Container(
       //   color: Colors.blueAccent,
       // ),
+      bottomNavigationBar: CurvedNavigationBar(
+        height: 60.0,
+        backgroundColor: Colors.deepPurple[50],
+        items: <Widget>[
+          Icon(Icons.add, size: 30),
+          Icon(Icons.list, size: 30),
+          Icon(Icons.compare_arrows, size: 30),
+          Icon(Icons.delivery_dining, size: 30),
+        ],
+        onTap: (index) {
+          // Handle button tap.
+        },
+      ),
     );
   }
 }

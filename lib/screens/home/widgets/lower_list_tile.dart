@@ -23,7 +23,7 @@ class LowerListTile extends StatelessWidget {
         subtitle: const Text('We offer various services'),
         trailing: IconButton(
           icon: Icon(
-            Icons.info,
+            Icons.more_vert,
             size: screenSize.width * 0.06,
           ),
           onPressed: () {},

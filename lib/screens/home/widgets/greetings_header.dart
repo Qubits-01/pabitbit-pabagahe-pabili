@@ -39,7 +39,7 @@ class GreetingsHeader extends StatelessWidget {
         Container(
           height: screenSize.height * 0.7,
           width: screenSize.width,
-          color: Color.fromRGBO(248, 161, 209, 0.1),
+          color: Colors.deepPurple[50],
         ),
       ],
     );
