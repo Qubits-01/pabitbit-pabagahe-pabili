@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 
+import 'routes.dart';
 import 'theme_data.dart';
-import 'screens/home/home_screen.dart';
+import './providers/nav_bar_state_provider.dart';
 
 void main() {
   // Make status bar transparent.
@@ -16,12 +18,14 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Pabitbit Pabagahe Pabili (P3)',
-      theme: themeData(),
-      home: HomeScreen(),
-      debugShowCheckedModeBanner: false,
-      routes: {},
+    return ChangeNotifierProvider(
+      create: (context) => NavBarStateProvider(),
+      child: MaterialApp(
+        title: 'Pabitbit Pabagahe Pabili (P3)',
+        theme: themeData(),
+        debugShowCheckedModeBanner: false,
+        routes: myRoutes,
+      ),
     );
   }
 }

@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
-class MyBottomNavigationBar extends StatelessWidget {
-  const MyBottomNavigationBar({
-    Key key,
-  }) : super(key: key);
+import '../providers/nav_bar_state_provider.dart';
 
+class MyBottomNavigationBar extends StatelessWidget {
+  const MyBottomNavigationBar();
   @override
   Widget build(BuildContext context) {
+    final NavBarStateProvider navBarState =
+        Provider.of<NavBarStateProvider>(context);
+
     return CurvedNavigationBar(
       height: 53.0,
       backgroundColor: Colors.deepPurple[50],
@@ -20,8 +23,8 @@ class MyBottomNavigationBar extends StatelessWidget {
         Icon(Icons.info, size: 30),
       ],
       onTap: (index) {
-        // Handle button tap.
-        print(index);
+        print('widget: ' + index.toString());
+        navBarState.changeState(index);
       },
     );
   }
