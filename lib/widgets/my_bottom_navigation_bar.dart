@@ -9,14 +9,15 @@ class MyBottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CurvedNavigationBar(
-      height: 60.0,
+      height: 53.0,
       backgroundColor: Colors.deepPurple[50],
       animationDuration: const Duration(milliseconds: 400),
       items: const <Widget>[
-        Icon(Icons.add, size: 30),
-        Icon(Icons.list, size: 30),
-        Icon(Icons.compare_arrows, size: 30),
-        Icon(Icons.delivery_dining, size: 30),
+        Icon(Icons.home, size: 30),
+        Icon(Icons.calculate, size: 30),
+        Icon(Icons.person, size: 30),
+        Icon(Icons.settings, size: 30),
+        Icon(Icons.info, size: 30),
       ],
       onTap: (index) {
         // Handle button tap.

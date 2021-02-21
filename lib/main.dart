@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 
 import 'theme_data.dart';
 import 'screens/home/home_screen.dart';
-import 'widgets/my_bottom_navigation_bar.dart';
 
 void main() {
   // Make status bar transparent.
@@ -20,21 +19,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Pabitbit Pabagahe Pabili (P3)',
       theme: themeData(),
-      home: MyHome(),
+      home: HomeScreen(),
       debugShowCheckedModeBanner: false,
-    );
-  }
-}
-
-class MyHome extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: HomeScreen(),
-      // body: Container(
-      //   color: Colors.blueAccent,
-      // ),
-      bottomNavigationBar: const MyBottomNavigationBar(),
+      routes: {},
     );
   }
 }
