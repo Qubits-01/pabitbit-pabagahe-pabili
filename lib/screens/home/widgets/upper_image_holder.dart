@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-class ImageHolder extends StatelessWidget {
+class UpperImageHolder extends StatelessWidget {
+  const UpperImageHolder();
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -23,7 +25,7 @@ class ImageHolder extends StatelessWidget {
                 topLeft: Radius.circular(10),
                 topRight: Radius.circular(10),
               ),
-              splashColor: Theme.of(context).accentColor,
+              splashColor: Colors.purpleAccent,
               onTap: () {},
             ),
           ),

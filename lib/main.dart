@@ -20,13 +20,13 @@ class MyApp extends StatelessWidget {
       title: 'Pabitbit Pabagahe Pabili (P3)',
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
-        accentColor: const Color.fromRGBO(248, 161, 209, 1.0),
+        accentColor: Colors.amberAccent,
         fontFamily: 'ProximaNova',
         textTheme: const TextTheme(
-          headline3: TextStyle(fontSize: 48.0, fontWeight: FontWeight.bold),
-          headline4: TextStyle(fontSize: 34.0, fontWeight: FontWeight.bold),
-          headline5: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
-          headline6: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+          headline3: TextStyle(fontSize: 34.0, fontWeight: FontWeight.bold),
+          headline4: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+          headline5: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+          headline6: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
           bodyText1: TextStyle(fontSize: 16.0),
           bodyText2: TextStyle(fontSize: 14.0),
         ),
@@ -48,7 +48,8 @@ class MyHome extends StatelessWidget {
       bottomNavigationBar: CurvedNavigationBar(
         height: 60.0,
         backgroundColor: Colors.deepPurple[50],
-        items: <Widget>[
+        animationDuration: const Duration(milliseconds: 400),
+        items: const <Widget>[
           Icon(Icons.add, size: 30),
           Icon(Icons.list, size: 30),
           Icon(Icons.compare_arrows, size: 30),
@@ -56,6 +57,7 @@ class MyHome extends StatelessWidget {
         ],
         onTap: (index) {
           // Handle button tap.
+          print(index);
         },
       ),
     );

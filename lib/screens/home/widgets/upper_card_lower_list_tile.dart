@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class LowerListTile extends StatelessWidget {
-  const LowerListTile(this.screenSize);
+class UpperCardLowerListTile extends StatelessWidget {
+  const UpperCardLowerListTile(this.screenSize);
 
   final Size screenSize;
 
@@ -17,7 +17,7 @@ class LowerListTile extends StatelessWidget {
         title: Text(
           'Book Your Order Now',
           style: TextStyle(
-            fontSize: Theme.of(context).textTheme.headline6.fontSize,
+            fontSize: Theme.of(context).textTheme.headline4.fontSize,
           ),
         ),
         subtitle: const Text('We offer various services'),
