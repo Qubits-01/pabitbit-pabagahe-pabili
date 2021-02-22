@@ -20,7 +20,7 @@ class UpperCardLowerListTile extends StatelessWidget {
         title: Text(
           'Book Your Order Now',
           style: TextStyle(
-            fontSize: Theme.of(context).textTheme.headline4.fontSize,
+            fontSize: Theme.of(context).textTheme.headline5.fontSize,
           ),
         ),
         subtitle: const Text('We offer various services'),

@@ -12,7 +12,7 @@ class LowerCardInfoBoxTitle extends StatelessWidget {
             child: Text(
               'Your Orders ',
               style: TextStyle(
-                fontSize: Theme.of(context).textTheme.headline5.fontSize,
+                fontSize: Theme.of(context).textTheme.headline6.fontSize,
               ),
             ),
           ),

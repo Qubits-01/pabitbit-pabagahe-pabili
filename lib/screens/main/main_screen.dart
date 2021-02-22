@@ -61,15 +61,18 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     print('Main Screen');
 
-    return WillPopScope(
-      onWillPop: () => _onBackPressed(context),
-      child: Scaffold(
-        body: Consumer<NavBarStateProvider>(
-          builder: (context, navBarState, child) {
-            return changeScreen(navBarState.state);
-          },
+    return ChangeNotifierProvider(
+      create: (context) => NavBarStateProvider(),
+      child: WillPopScope(
+        onWillPop: () => _onBackPressed(context),
+        child: Scaffold(
+          body: Consumer<NavBarStateProvider>(
+            builder: (context, navBarState, child) {
+              return changeScreen(navBarState.state);
+            },
+          ),
+          bottomNavigationBar: const MyBottomNavigationBar(),
         ),
-        bottomNavigationBar: const MyBottomNavigationBar(),
       ),
     );
   }
