@@ -10,7 +10,7 @@ class LowerCardInfoBoxTitle extends StatelessWidget {
         Expanded(
           child: FittedBox(
             child: Text(
-              'Transactions ',
+              'Your Orders ',
               style: TextStyle(
                 fontSize: Theme.of(context).textTheme.headline5.fontSize,
               ),

@@ -37,17 +37,40 @@ class MainScreen extends StatelessWidget {
     }
   }
 
+  Future<bool> _onBackPressed(BuildContext context) {
+    return showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Are you sure?'),
+        content: const Text('Do you want to exit the App'),
+        actions: <Widget>[
+          FlatButton(
+            onPressed: () => Navigator.of(context).pop(true),
+            child: const Text('YES'),
+          ),
+          FlatButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: const Text('NO'),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     print('Main Screen');
 
-    return Scaffold(
-      body: Consumer<NavBarStateProvider>(
-        builder: (context, navBarState, child) {
-          return changeScreen(navBarState.state);
-        },
+    return WillPopScope(
+      onWillPop: () => _onBackPressed(context),
+      child: Scaffold(
+        body: Consumer<NavBarStateProvider>(
+          builder: (context, navBarState, child) {
+            return changeScreen(navBarState.state);
+          },
+        ),
+        bottomNavigationBar: const MyBottomNavigationBar(),
       ),
-      bottomNavigationBar: const MyBottomNavigationBar(),
     );
   }
 }
