@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'widgets/background_body.dart';
 import 'widgets/foreground_body.dart';
-import '../../widgets/my_bottom_navigation_bar.dart';
 
 class OverviewScreen extends StatelessWidget {
   const OverviewScreen();
@@ -11,6 +10,8 @@ class OverviewScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('overview_screen');
+
     final Size screenSize = MediaQuery.of(context).size;
 
     return Stack(

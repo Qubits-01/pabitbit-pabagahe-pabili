@@ -8,9 +8,6 @@ class MyBottomNavigationBar extends StatelessWidget {
   const MyBottomNavigationBar();
   @override
   Widget build(BuildContext context) {
-    final NavBarStateProvider navBarState =
-        Provider.of<NavBarStateProvider>(context);
-
     return CurvedNavigationBar(
       height: 53.0,
       backgroundColor: Colors.deepPurple[50],
@@ -23,8 +20,8 @@ class MyBottomNavigationBar extends StatelessWidget {
         Icon(Icons.info, size: 30),
       ],
       onTap: (index) {
-        print('widget: ' + index.toString());
-        navBarState.changeState(index);
+        Provider.of<NavBarStateProvider>(context, listen: false)
+            .changeState(index);
       },
     );
   }

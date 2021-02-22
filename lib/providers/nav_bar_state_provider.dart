@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 
 class NavBarStateProvider with ChangeNotifier {
   // ignore: prefer_final_fields
@@ -10,7 +10,10 @@ class NavBarStateProvider with ChangeNotifier {
 
   void changeState(int newState) {
     _state = newState;
-    print('provider: $_state');
     notifyListeners();
+  }
+
+  void pushScreen(BuildContext context, String routeName) {
+    Navigator.of(context).pushNamed(routeName);
   }
 }

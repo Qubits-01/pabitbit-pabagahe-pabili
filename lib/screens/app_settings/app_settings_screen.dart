@@ -7,6 +7,8 @@ class AppSettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('App Settings SCreen');
+
     return const Center(
       child: Text('App Settings Screen'),
     );

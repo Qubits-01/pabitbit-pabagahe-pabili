@@ -7,6 +7,8 @@ class RateCalculatorScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('Rate Calculator Screen');
+
     return const Center(
       child: Text('Rate Calculator Screen'),
     );

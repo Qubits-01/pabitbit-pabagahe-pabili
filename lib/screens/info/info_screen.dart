@@ -7,6 +7,8 @@ class InfoScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('Information Screen');
+
     return const Center(
       child: Text('Information Screen'),
     );

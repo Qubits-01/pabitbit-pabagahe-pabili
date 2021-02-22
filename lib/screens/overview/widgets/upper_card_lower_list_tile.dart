@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../order_booking/order_booking_screen.dart';
+
 class UpperCardLowerListTile extends StatelessWidget {
   const UpperCardLowerListTile(this.screenSize);
 
@@ -8,7 +10,8 @@ class UpperCardLowerListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () =>
+          Navigator.of(context).pushNamed(OrderBookingScreen.routeName),
       child: ListTile(
         leading: Icon(
           Icons.delivery_dining,

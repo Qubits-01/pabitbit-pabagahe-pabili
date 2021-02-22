@@ -15,7 +15,6 @@ class MainScreen extends StatelessWidget {
   static const routeName = '/';
 
   Widget changeScreen(int navBarState) {
-    print('main: $navBarState');
     switch (navBarState) {
       case 0:
         return OverviewScreen();
@@ -40,13 +39,15 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('Main Screen');
+
     return Scaffold(
       body: Consumer<NavBarStateProvider>(
         builder: (context, navBarState, child) {
           return changeScreen(navBarState.state);
         },
       ),
-      bottomNavigationBar: MyBottomNavigationBar(),
+      bottomNavigationBar: const MyBottomNavigationBar(),
     );
   }
 }

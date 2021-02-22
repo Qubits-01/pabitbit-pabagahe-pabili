@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../order_booking/order_booking_screen.dart';
+
 class UpperImageHolder extends StatelessWidget {
   const UpperImageHolder();
 
@@ -14,7 +16,9 @@ class UpperImageHolder extends StatelessWidget {
             topRight: Radius.circular(10),
           ),
           child: Image.asset(
-              'assets/images/courier-carrying-order-illustration.jpg'),
+            'assets/images/courier-carrying-order-illustration.jpg',
+            fit: BoxFit.cover,
+          ),
         ),
         // Overlays an InkWell on the image.
         Positioned.fill(
@@ -26,7 +30,8 @@ class UpperImageHolder extends StatelessWidget {
                 topRight: Radius.circular(10),
               ),
               splashColor: Colors.purpleAccent,
-              onTap: () {},
+              onTap: () =>
+                  Navigator.of(context).pushNamed(OrderBookingScreen.routeName),
             ),
           ),
         ),

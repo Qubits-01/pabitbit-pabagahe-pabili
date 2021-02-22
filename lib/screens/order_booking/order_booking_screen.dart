@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/my_bottom_navigation_bar.dart';
-
 class OrderBookingScreen extends StatelessWidget {
   const OrderBookingScreen();
 
@@ -14,7 +12,6 @@ class OrderBookingScreen extends StatelessWidget {
       body: const Center(
         child: Text('Booking Screen'),
       ),
-      bottomNavigationBar: const MyBottomNavigationBar(),
     );
   }
 }
