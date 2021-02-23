@@ -2,10 +2,18 @@ import 'package:flutter/material.dart';
 
 import 'widgets/whole_form.dart';
 
-class OrderBookingScreen extends StatelessWidget {
+class OrderBookingScreen extends StatefulWidget {
   const OrderBookingScreen();
 
   static const routeName = '/booking';
+
+  @override
+  _OrderBookingScreenState createState() => _OrderBookingScreenState();
+}
+
+class _OrderBookingScreenState extends State<OrderBookingScreen> {
+  // ignore: prefer_final_fields
+  int _selectedPageIndex = 0;
 
   Future<void> _showContactInformation(BuildContext context) {
     return showDialog(
@@ -48,6 +56,12 @@ class OrderBookingScreen extends StatelessWidget {
     );
   }
 
+  void _changePageIndex(int newIndex) {
+    setState(() {
+      _selectedPageIndex = newIndex;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
@@ -68,6 +82,34 @@ class OrderBookingScreen extends StatelessWidget {
         alignment: Alignment.topCenter,
         color: Colors.deepPurple[50],
         child: WholeForm(screenSize),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedPageIndex,
+        type: BottomNavigationBarType.shifting,
+        backgroundColor: Colors.pink,
+        selectedItemColor: Colors.deepPurple[800],
+        unselectedItemColor: Colors.deepPurple[100],
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            label: 'Step 1',
+            icon: Icon(Icons.border_all_rounded),
+          ),
+          BottomNavigationBarItem(
+              label: 'Step 2', icon: Icon(Icons.map_rounded)),
+          BottomNavigationBarItem(
+            label: 'Step 3',
+            icon: Icon(Icons.pages_rounded),
+          ),
+          BottomNavigationBarItem(
+            label: 'Step 4',
+            icon: Icon(Icons.warning_rounded),
+          ),
+          BottomNavigationBarItem(
+            label: 'Step 5',
+            icon: Icon(Icons.monetization_on_rounded),
+          ),
+        ],
+        onTap: (int index) => _changePageIndex(index),
       ),
     );
   }

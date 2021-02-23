@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 ThemeData themeData() {
   return ThemeData(
     primarySwatch: Colors.deepPurple,
+    primaryColor: Colors.deepPurple,
     accentColor: Colors.deepPurpleAccent,
     fontFamily: 'ProximaNova',
     textTheme: const TextTheme(
