@@ -17,7 +17,7 @@ class LowerCardInfoBoxTitle extends StatelessWidget {
             ),
           ),
         ),
-        const Icon(Icons.shopping_cart),
+        const Icon(Icons.shopping_cart_outlined),
       ],
     );
   }
