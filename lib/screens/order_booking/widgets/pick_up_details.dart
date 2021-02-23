@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'form_group.dart';
+import 'text_field_with_icon.dart';
 
 class PickUpDetails extends StatelessWidget {
   const PickUpDetails(
@@ -16,47 +17,39 @@ class PickUpDetails extends StatelessWidget {
     return FormGroup(
       screenSize,
       title: title,
-      formFields: <Widget>[
-        TextFormField(
-          decoration: const InputDecoration(
-            labelText: 'Contact Name',
-          ),
+      formFields: const <Widget>[
+        TextFieldWithIcon(
+          icon: Icons.person_outline,
+          labelText: 'Contact Name',
           keyboardType: TextInputType.name,
           textInputAction: TextInputAction.next,
         ),
-        TextFormField(
-          decoration: const InputDecoration(
-            labelText: 'Pick-up Address',
-          ),
+        SizedBox(height: 10),
+        TextFieldWithIcon(
+          icon: Icons.map_outlined,
+          labelText: 'Pick-up Address',
           keyboardType: TextInputType.streetAddress,
           textInputAction: TextInputAction.next,
         ),
-        TextFormField(
-          decoration: const InputDecoration(
-            labelText: 'Contact Number',
-          ),
+        SizedBox(height: 10),
+        TextFieldWithIcon(
+          icon: Icons.phone_android_outlined,
+          labelText: 'Contact Number',
           keyboardType: TextInputType.phone,
           textInputAction: TextInputAction.next,
         ),
-        TextFormField(
-          decoration: const InputDecoration(
-            labelText: 'Package Weight (in kilograms)',
-          ),
+        SizedBox(height: 10),
+        TextFieldWithIcon(
+          icon: Icons.line_weight_outlined,
+          labelText: 'Package Weight (in kilograms)',
           keyboardType: TextInputType.number,
           textInputAction: TextInputAction.next,
         ),
-        TextFormField(
-          decoration: const InputDecoration(
-            labelText: 'Box Size',
-          ),
+        SizedBox(height: 10),
+        TextFieldWithIcon(
+          icon: Icons.phone_android_outlined,
+          labelText: 'Box Size',
           keyboardType: TextInputType.number,
-          textInputAction: TextInputAction.next,
-        ),
-        TextFormField(
-          decoration: const InputDecoration(
-            labelText: 'Schedule of Pick-up',
-          ),
-          keyboardType: TextInputType.datetime,
           textInputAction: TextInputAction.next,
         ),
       ],
