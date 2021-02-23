@@ -1,0 +1,47 @@
+Pick up Details
+
+Contact name: 
+Pick up address:
+Contact num:
+Box wgt:
+Box size: 
+Schedule of pick up: 
+
+=======================
+Shipment going to 
+
+Name: 
+Complete address:
+Prefecture/City: 
+Postal code:
+Contact num:
+
+Package wgt: 
+
+Choose Services: 
+*Pasabay
+- 1-19kgs only 
+- ¥1,200 per kg 
+
+*Pabitbit (Pabagahe)
+- 20kgs and above 
+- ¥1,200 per kg 
+
+*Pabitbit (Biahero) 
+- ¥1,000 per kg (futsu mono)
+- ¥1,500 per kg (dame mono)
+
+*Pabili at Pabitbit (Pabagahe) 
+- ¥50/kg pabili service fee
+- ¥1,200/kg Pabitbit servc fee
+
+*Pabili at Pabitbit (Biahero) 
+- ¥500/kg Pabili servc fee
+- ¥1,000/kg  (futsu mono)
+- ¥1,500/kg (dame mono)s
+
+================================
+
+Contact us: 
+090-5724-3152 
+(02) 8281-7086

@@ -40,7 +40,7 @@ class PickUpDetails extends StatelessWidget {
         ),
         TextFormField(
           decoration: const InputDecoration(
-            labelText: 'Box Weight',
+            labelText: 'Package Weight (in kilograms)',
           ),
           keyboardType: TextInputType.number,
           textInputAction: TextInputAction.next,

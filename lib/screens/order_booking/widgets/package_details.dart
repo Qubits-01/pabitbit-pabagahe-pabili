@@ -20,7 +20,7 @@ class PackageDetails extends StatelessWidget {
       formFields: <Widget>[
         TextFormField(
           decoration: const InputDecoration(
-            labelText: 'Package Weight',
+            labelText: 'Package Weight (in kilograms)',
           ),
           keyboardType: TextInputType.number,
           textInputAction: TextInputAction.next,
