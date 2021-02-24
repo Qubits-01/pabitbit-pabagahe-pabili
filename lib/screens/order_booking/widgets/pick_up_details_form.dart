@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'form_group.dart';
 import 'text_field_with_icon.dart';
 
-class ShipmentGoingTo extends StatelessWidget {
-  const ShipmentGoingTo(
+class PickUpDetailsForm extends StatelessWidget {
+  const PickUpDetailsForm(
     this.screenSize, {
     @required this.title,
   });
@@ -20,29 +20,15 @@ class ShipmentGoingTo extends StatelessWidget {
       formFields: const <Widget>[
         TextFieldWithIcon(
           icon: Icons.person_outline,
-          labelText: 'Full Name',
+          labelText: 'Contact Name',
           keyboardType: TextInputType.name,
           textInputAction: TextInputAction.next,
         ),
         SizedBox(height: 10),
         TextFieldWithIcon(
           icon: Icons.map_outlined,
-          labelText: 'Complete Address',
+          labelText: 'Pick-up Address',
           keyboardType: TextInputType.streetAddress,
-          textInputAction: TextInputAction.next,
-        ),
-        SizedBox(height: 10),
-        TextFieldWithIcon(
-          icon: Icons.location_city_outlined,
-          labelText: 'Prefecture or City',
-          keyboardType: TextInputType.streetAddress,
-          textInputAction: TextInputAction.next,
-        ),
-        SizedBox(height: 10),
-        TextFieldWithIcon(
-          icon: Icons.mail_outline,
-          labelText: 'Postal Code',
-          keyboardType: TextInputType.number,
           textInputAction: TextInputAction.next,
         ),
         SizedBox(height: 10),
@@ -50,6 +36,20 @@ class ShipmentGoingTo extends StatelessWidget {
           icon: Icons.phone_android_outlined,
           labelText: 'Contact Number',
           keyboardType: TextInputType.phone,
+          textInputAction: TextInputAction.next,
+        ),
+        SizedBox(height: 10),
+        TextFieldWithIcon(
+          icon: Icons.line_weight_outlined,
+          labelText: 'Package Weight (in kilograms)',
+          keyboardType: TextInputType.number,
+          textInputAction: TextInputAction.next,
+        ),
+        SizedBox(height: 10),
+        TextFieldWithIcon(
+          icon: Icons.photo_size_select_small_rounded,
+          labelText: 'Box Size',
+          keyboardType: TextInputType.number,
           textInputAction: TextInputAction.next,
         ),
       ],

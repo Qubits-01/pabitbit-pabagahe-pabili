@@ -4,8 +4,8 @@ import 'form_group.dart';
 import 'services_selection.dart';
 import 'text_field_with_icon.dart';
 
-class PackageDetails extends StatelessWidget {
-  const PackageDetails(
+class PackageDetailsForm extends StatelessWidget {
+  const PackageDetailsForm(
     this.screenSize, {
     @required this.title,
   });

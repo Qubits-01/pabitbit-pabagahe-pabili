@@ -1,19 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-import 'widgets/whole_form.dart';
+import '../../providers/form_nav_bar_provider.dart';
+import 'widgets/form_bottom_nav_bar.dart';
+import 'widgets/package_details_form.dart';
+import 'widgets/pick_up_details_form.dart';
+import 'widgets/shipment_going_to_form.dart';
 
-class OrderBookingScreen extends StatefulWidget {
-  const OrderBookingScreen();
+class OrderBookingScreen extends StatelessWidget {
+  OrderBookingScreen();
 
   static const routeName = '/booking';
-
-  @override
-  _OrderBookingScreenState createState() => _OrderBookingScreenState();
-}
-
-class _OrderBookingScreenState extends State<OrderBookingScreen> {
-  // ignore: prefer_final_fields
-  int _selectedPageIndex = 0;
 
   Future<void> _showContactInformation(BuildContext context) {
     return showDialog(
@@ -23,7 +20,7 @@ class _OrderBookingScreenState extends State<OrderBookingScreen> {
         children: <Widget>[
           Container(
             padding:
-                const EdgeInsets.only(left: 20, top: 10, right: 20, bottom: 20),
+                const EdgeInsets.only(left: 25, top: 10, right: 20, bottom: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -56,60 +53,89 @@ class _OrderBookingScreenState extends State<OrderBookingScreen> {
     );
   }
 
-  void _changePageIndex(int newIndex) {
-    setState(() {
-      _selectedPageIndex = newIndex;
-    });
+  Future<bool> onBackPressed(BuildContext context) {
+    return showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Are you sure?'),
+        content: const Text('Do you want to exit the App'),
+        actions: <Widget>[
+          FlatButton(
+            onPressed: () => Navigator.of(context).pop(true),
+            child: const Text('YES'),
+          ),
+          FlatButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: const Text('NO'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget changeFormPage(Size screenSize, int navBarIndex) {
+    switch (navBarIndex) {
+      case 0:
+        return PickUpDetailsForm(screenSize, title: 'Pick-up Details');
+        break;
+      case 1:
+        return ShipmentGoingToForm(screenSize, title: 'Shipment Going To');
+        break;
+      case 2:
+        return PackageDetailsForm(screenSize, title: 'Package Details');
+        break;
+      case 3:
+        return ShipmentGoingToForm(screenSize, title: 'Shipment Going To');
+        break;
+      case 4:
+        return PackageDetailsForm(screenSize, title: 'Package Details');
+        break;
+      default:
+        return PickUpDetailsForm(screenSize, title: 'Pick-up Details');
+        break;
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
 
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Book With Us'),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.info_outline),
-            onPressed: () => _showContactInformation(context),
+    return ChangeNotifierProvider(
+      create: (context) => FormNavBarProvider(),
+      child: WillPopScope(
+        onWillPop: () => onBackPressed(context),
+        child: Scaffold(
+          appBar: AppBar(
+            title: const Text('Book With Us'),
+            actions: <Widget>[
+              IconButton(
+                icon: const Icon(Icons.info_outline),
+                onPressed: () => _showContactInformation(context),
+              ),
+            ],
           ),
-        ],
-      ),
-      body: Container(
-        width: screenSize.width,
-        height: screenSize.height,
-        alignment: Alignment.topCenter,
-        color: Colors.deepPurple[50],
-        child: WholeForm(screenSize),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedPageIndex,
-        type: BottomNavigationBarType.shifting,
-        backgroundColor: Colors.pink,
-        selectedItemColor: Colors.deepPurple[800],
-        unselectedItemColor: Colors.deepPurple[100],
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            label: 'Step 1',
-            icon: Icon(Icons.border_all_rounded),
+          body: Container(
+            // This sets the background color.
+            width: screenSize.width,
+            height: screenSize.height,
+            alignment: Alignment.topCenter,
+            color: Colors.deepPurple[50],
+            child: Container(
+              padding: const EdgeInsets.all(20),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: <Widget>[
+                    Consumer<FormNavBarProvider>(
+                      builder: (context, navBarIndex, child) =>
+                          changeFormPage(screenSize, navBarIndex.index),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ),
-          BottomNavigationBarItem(
-              label: 'Step 2', icon: Icon(Icons.map_rounded)),
-          BottomNavigationBarItem(
-            label: 'Step 3',
-            icon: Icon(Icons.pages_rounded),
-          ),
-          BottomNavigationBarItem(
-            label: 'Step 4',
-            icon: Icon(Icons.warning_rounded),
-          ),
-          BottomNavigationBarItem(
-            label: 'Step 5',
-            icon: Icon(Icons.monetization_on_rounded),
-          ),
-        ],
-        onTap: (int index) => _changePageIndex(index),
+          bottomNavigationBar: FormBottomNavBar(),
+        ),
       ),
     );
   }

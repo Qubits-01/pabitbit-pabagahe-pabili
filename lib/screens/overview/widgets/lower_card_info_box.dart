@@ -22,7 +22,10 @@ class LowerCardInfoBox extends StatelessWidget {
             const LowerCardInfoBoxTitle(),
             Text(
               'All your booked orders can be found here.',
-              style: Theme.of(context).textTheme.bodyText2,
+              style: TextStyle(
+                fontSize: Theme.of(context).textTheme.bodyText2.fontSize,
+                color: Colors.black54,
+              ),
             ),
             const Divider(),
             const Text(

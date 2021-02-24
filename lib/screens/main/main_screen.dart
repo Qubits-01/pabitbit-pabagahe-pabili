@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../providers/nav_bar_state_provider.dart';
+import '../../providers/main_nav_bar_provider.dart';
 import '../../widgets/my_bottom_navigation_bar.dart';
 import '../overview/overview_screen.dart';
 import '../rate_calculator/rate_calculator_screen.dart';
@@ -14,8 +14,8 @@ class MainScreen extends StatelessWidget {
 
   static const routeName = '/';
 
-  Widget changeScreen(int navBarState) {
-    switch (navBarState) {
+  Widget changeScreen(int navBarIndex) {
+    switch (navBarIndex) {
       case 0:
         return OverviewScreen();
         break;
@@ -37,7 +37,7 @@ class MainScreen extends StatelessWidget {
     }
   }
 
-  Future<bool> _onBackPressed(BuildContext context) {
+  Future<bool> onBackPressed(BuildContext context) {
     return showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -62,13 +62,13 @@ class MainScreen extends StatelessWidget {
     print('Main Screen');
 
     return ChangeNotifierProvider(
-      create: (context) => NavBarStateProvider(),
+      create: (context) => MainNavBarProvider(),
       child: WillPopScope(
-        onWillPop: () => _onBackPressed(context),
+        onWillPop: () => onBackPressed(context),
         child: Scaffold(
-          body: Consumer<NavBarStateProvider>(
-            builder: (context, navBarState, child) {
-              return changeScreen(navBarState.state);
+          body: Consumer<MainNavBarProvider>(
+            builder: (context, navBarIndex, child) {
+              return changeScreen(navBarIndex.index);
             },
           ),
           bottomNavigationBar: const MyBottomNavigationBar(),

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 ThemeData themeData() {
   return ThemeData(
     primarySwatch: Colors.deepPurple,
-    primaryColor: Colors.deepPurple,
     accentColor: Colors.deepPurpleAccent,
+    splashColor: Colors.deepPurpleAccent[50],
     fontFamily: 'ProximaNova',
     textTheme: const TextTheme(
       headline3: TextStyle(fontSize: 34.0, fontWeight: FontWeight.bold),

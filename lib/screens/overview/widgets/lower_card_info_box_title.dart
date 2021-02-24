@@ -5,20 +5,23 @@ class LowerCardInfoBoxTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          child: FittedBox(
-            child: Text(
-              'Your Orders ',
-              style: TextStyle(
-                fontSize: Theme.of(context).textTheme.headline6.fontSize,
+    return Padding(
+      padding: const EdgeInsets.only(right: 10),
+      child: Row(
+        children: [
+          Expanded(
+            child: FittedBox(
+              child: Text(
+                'Your Orders ',
+                style: TextStyle(
+                  fontSize: Theme.of(context).textTheme.headline6.fontSize,
+                ),
               ),
             ),
           ),
-        ),
-        const Icon(Icons.shopping_cart_outlined),
-      ],
+          const Icon(Icons.list_alt_outlined),
+        ],
+      ),
     );
   }
 }

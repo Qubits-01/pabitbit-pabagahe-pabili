@@ -14,7 +14,7 @@ class UpperCardLowerListTile extends StatelessWidget {
           Navigator.of(context).pushNamed(OrderBookingScreen.routeName),
       child: ListTile(
         leading: Icon(
-          Icons.delivery_dining,
+          Icons.add_shopping_cart_outlined,
           size: screenSize.width * 0.09,
         ),
         title: Text(
