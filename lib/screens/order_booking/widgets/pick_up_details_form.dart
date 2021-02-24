@@ -4,10 +4,7 @@ import 'form_group.dart';
 import 'text_field_with_icon.dart';
 
 class PickUpDetailsForm extends StatelessWidget {
-  const PickUpDetailsForm(
-    this.screenSize, {
-    @required this.title,
-  });
+  const PickUpDetailsForm(this.screenSize, {@required this.title});
 
   final Size screenSize;
   final String title;

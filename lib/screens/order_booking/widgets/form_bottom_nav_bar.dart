@@ -18,7 +18,10 @@ class FormBottomNavBar extends StatelessWidget {
           label: 'Step 1',
           icon: Icon(Icons.drive_file_rename_outline),
         ),
-        BottomNavigationBarItem(label: 'Step 2', icon: Icon(Icons.map_rounded)),
+        BottomNavigationBarItem(
+          label: 'Step 2',
+          icon: Icon(Icons.map_rounded),
+        ),
         BottomNavigationBarItem(
           label: 'Step 3',
           icon: Icon(Icons.pages_rounded),

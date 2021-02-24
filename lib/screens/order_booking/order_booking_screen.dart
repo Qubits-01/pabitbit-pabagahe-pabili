@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../../providers/form_nav_bar_provider.dart';
 import 'widgets/form_bottom_nav_bar.dart';
+import 'widgets/item_reminders_form.dart';
 import 'widgets/package_details_form.dart';
 import 'widgets/pick_up_details_form.dart';
 import 'widgets/shipment_going_to_form.dart';
@@ -12,7 +13,7 @@ class OrderBookingScreen extends StatelessWidget {
 
   static const routeName = '/booking';
 
-  Future<void> _showContactInformation(BuildContext context) {
+  Future<void> showContactInformation(BuildContext context) {
     return showDialog(
       context: context,
       builder: (context) => SimpleDialog(
@@ -85,7 +86,7 @@ class OrderBookingScreen extends StatelessWidget {
         return PackageDetailsForm(screenSize, title: 'Package Details');
         break;
       case 3:
-        return ShipmentGoingToForm(screenSize, title: 'Shipment Going To');
+        return ItemRemindersForm(screenSize, title: 'Item Reminders');
         break;
       case 4:
         return PackageDetailsForm(screenSize, title: 'Package Details');
@@ -110,7 +111,7 @@ class OrderBookingScreen extends StatelessWidget {
             actions: <Widget>[
               IconButton(
                 icon: const Icon(Icons.info_outline),
-                onPressed: () => _showContactInformation(context),
+                onPressed: () => showContactInformation(context),
               ),
             ],
           ),
@@ -120,9 +121,9 @@ class OrderBookingScreen extends StatelessWidget {
             height: screenSize.height,
             alignment: Alignment.topCenter,
             color: Colors.deepPurple[50],
-            child: Container(
-              padding: const EdgeInsets.all(20),
-              child: SingleChildScrollView(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
                 child: Column(
                   children: <Widget>[
                     Consumer<FormNavBarProvider>(
