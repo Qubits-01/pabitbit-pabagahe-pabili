@@ -57,8 +57,8 @@ class OrderBookingScreen extends StatelessWidget {
     return showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Are you sure?'),
-        content: const Text('Do you want to exit the App'),
+        title: const Text('Back to Main Screen'),
+        content: const Text('Any unsave data will be lost, continue anyway?'),
         actions: <Widget>[
           FlatButton(
             onPressed: () => Navigator.of(context).pop(true),
