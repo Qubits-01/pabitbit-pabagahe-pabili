@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../providers/main_nav_bar_provider.dart';
+import '../../providers/order_items_provider.dart';
 import '../../widgets/my_bottom_navigation_bar.dart';
 import '../overview/overview_screen.dart';
 import '../rate_calculator/rate_calculator_screen.dart';
@@ -61,8 +62,15 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     print('Main Screen');
 
-    return ChangeNotifierProvider(
-      create: (context) => MainNavBarProvider(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => MainNavBarProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => OrderItemsProvider(),
+        ),
+      ],
       child: WillPopScope(
         onWillPop: () => onBackPressed(context),
         child: Scaffold(
