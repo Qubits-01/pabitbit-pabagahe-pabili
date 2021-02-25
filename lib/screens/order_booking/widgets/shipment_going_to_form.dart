@@ -17,7 +17,7 @@ class ShipmentGoingToForm extends StatelessWidget {
     return FormGroup(
       screenSize,
       title: title,
-      formFields: const <Widget>[
+      children: const <Widget>[
         TextFieldWithIcon(
           icon: Icons.person_outline,
           labelText: 'Full Name',

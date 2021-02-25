@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../data/msds_items.dart';
+import '../../../data/msds_items_data.dart';
 
 class MsdsItemsList extends StatelessWidget {
   const MsdsItemsList();
@@ -11,7 +11,7 @@ class MsdsItemsList extends StatelessWidget {
       padding: const EdgeInsets.all(10.0),
       child: Column(
         children: <Widget>[
-          ...msdsItems
+          ...msdsItemsData
               .map(
                 (msdsItem) => Row(
                   children: <Widget>[

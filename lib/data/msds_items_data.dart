@@ -1,4 +1,4 @@
-const List<String> msdsItems = [
+const List<String> msdsItemsData = [
   'Rejunevating Set',
   'Non-food Liquids',
   'Non-food Creams',

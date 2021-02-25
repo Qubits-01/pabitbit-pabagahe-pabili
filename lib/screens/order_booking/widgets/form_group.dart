@@ -8,12 +8,12 @@ class FormGroup extends StatelessWidget {
   const FormGroup(
     this.screenSize, {
     @required this.title,
-    @required this.formFields,
+    @required this.children,
   });
 
   final Size screenSize;
   final String title;
-  final List<Widget> formFields;
+  final List<Widget> children;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class FormGroup extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             FormGroupHeader(screenSize, title: title),
-            FormGroupBody(formFields: formFields),
+            FormGroupBody(children: children),
             const Divider(),
             FormScreenNavButtons(screenSize),
           ],

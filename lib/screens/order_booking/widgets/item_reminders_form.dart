@@ -15,9 +15,9 @@ class ItemRemindersForm extends StatelessWidget {
     return FormGroup(
       screenSize,
       title: title,
-      formFields: <Widget>[
+      children: const <Widget>[
         MsdsItemsReminder(),
-        const Divider(),
+        Divider(),
         ProhibitedItemsReminder(),
       ],
     );

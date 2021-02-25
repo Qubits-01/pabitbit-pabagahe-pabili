@@ -18,7 +18,7 @@ class PackageDetailsForm extends StatelessWidget {
     return FormGroup(
       screenSize,
       title: title,
-      formFields: <Widget>[
+      children: <Widget>[
         const TextFieldWithIcon(
           icon: Icons.line_weight_outlined,
           labelText: 'Package Weight (in kilograms)',

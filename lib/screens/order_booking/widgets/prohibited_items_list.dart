@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../data/customs_prohibited_items.dart';
+import '../../../data/customs_prohibited_items_data.dart';
 
 class ProhibitedItemsList extends StatelessWidget {
   const ProhibitedItemsList();
@@ -11,7 +11,7 @@ class ProhibitedItemsList extends StatelessWidget {
       padding: const EdgeInsets.all(10.0),
       child: Column(
         children: <Widget>[
-          ...customsProhibitedItems
+          ...customsProhibitedItemsData
               .map(
                 (prohibitedItem) => Row(
                   children: <Widget>[

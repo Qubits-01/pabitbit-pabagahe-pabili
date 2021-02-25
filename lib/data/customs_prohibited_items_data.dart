@@ -1,4 +1,4 @@
-const List<String> customsProhibitedItems = [
+const List<String> customsProhibitedItemsData = [
   'Dried Goods',
   'Perishable Goods',
   'Frozen Goods',

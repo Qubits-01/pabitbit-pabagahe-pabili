@@ -1,4 +1,4 @@
-import '../models/service_type.dart';
+import '../models/service_type_model.dart';
 
 enum ServicesTypeEnum {
   pasabay,

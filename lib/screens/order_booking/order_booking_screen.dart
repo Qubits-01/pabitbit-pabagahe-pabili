@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../../providers/form_nav_bar_provider.dart';
 import 'widgets/form_bottom_nav_bar.dart';
 import 'widgets/item_reminders_form.dart';
+import 'widgets/order_summary.dart';
 import 'widgets/package_details_form.dart';
 import 'widgets/pick_up_details_form.dart';
 import 'widgets/shipment_going_to_form.dart';
@@ -89,7 +90,7 @@ class OrderBookingScreen extends StatelessWidget {
         return ItemRemindersForm(screenSize, title: 'Item Reminders');
         break;
       case 4:
-        return PackageDetailsForm(screenSize, title: 'Package Details');
+        return OrderSummary(screenSize, title: 'Order Summary');
         break;
       default:
         return PickUpDetailsForm(screenSize, title: 'Pick-up Details');
