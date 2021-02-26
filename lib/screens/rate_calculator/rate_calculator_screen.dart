@@ -9,8 +9,19 @@ class RateCalculatorScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     print('Rate Calculator Screen');
 
-    return const Center(
-      child: Text('Rate Calculator Screen'),
+    return Container(
+      color: Colors.deepPurple[50],
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Image.asset('assets/images/coming-soon.jpg'),
+          const SizedBox(height: 15),
+          Text(
+            'Rate Calculator Screen',
+            style: Theme.of(context).textTheme.headline6,
+          )
+        ],
+      ),
     );
   }
 }

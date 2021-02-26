@@ -9,8 +9,19 @@ class InfoScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     print('Information Screen');
 
-    return const Center(
-      child: Text('Information Screen'),
+    return Container(
+      color: Colors.deepPurple[50],
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Image.asset('assets/images/coming-soon.jpg'),
+          const SizedBox(height: 15),
+          Text(
+            'Information Screen',
+            style: Theme.of(context).textTheme.headline6,
+          )
+        ],
+      ),
     );
   }
 }
