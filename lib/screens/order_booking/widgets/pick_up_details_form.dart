@@ -22,6 +22,7 @@ class _PickUpDetailsFormState extends State<PickUpDetailsForm> {
   @override
   void initState() {
     super.initState();
+    print('Initalized');
 
     _orderItemProvider = Provider.of<OrderItemProvider>(context, listen: false);
 
@@ -32,6 +33,14 @@ class _PickUpDetailsFormState extends State<PickUpDetailsForm> {
     if (pickUpSchedule != null) {
       _pickUpSchedController.text = pickUpSchedule.toString();
     }
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+
+    print('Dispose');
   }
 
   void _presentDatePicker(BuildContext context) {
@@ -163,7 +172,6 @@ class _PickUpDetailsFormState extends State<PickUpDetailsForm> {
               textInputAction: TextInputAction.next,
               onFieldSubmitted: (String value) {},
               onSaved: (String value) {
-                print(value);
                 _orderItemProvider.pickUpDetails.pickUpSchedule =
                     DateTime.parse(value);
               },

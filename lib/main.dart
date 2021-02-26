@@ -5,6 +5,13 @@ import 'routes.dart';
 import 'theme_data.dart';
 
 void main() {
+  // Prevent landscape orientation.
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    // DeviceOrientation.portraitDown,
+  ]);
+
   // Make status bar transparent.
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
