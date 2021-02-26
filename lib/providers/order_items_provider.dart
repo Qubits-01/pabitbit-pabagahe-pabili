@@ -1,11 +1,11 @@
 import 'package:flutter/foundation.dart';
 
-import '../models/order_item_model.dart';
+import '../providers/order_item_provider.dart';
 
 class OrderItemsProvider with ChangeNotifier {
-  List<OrderItemModel> _orderItems;
+  List<OrderItemProvider> _orderItems;
 
-  List<OrderItemModel> get orderItems {
+  List<OrderItemProvider> get orderItems {
     return [..._orderItems];
   }
 }
