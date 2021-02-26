@@ -5,12 +5,8 @@ import '../../models/pick_up_details_model.dart' as pick_up_details
     show initValues;
 import '../../providers/order_item_provider.dart';
 import '../../providers/form_nav_bar_provider.dart';
+import 'widgets/whole_form.dart';
 import 'widgets/form_bottom_nav_bar.dart';
-import 'widgets/item_reminders_form.dart';
-import 'widgets/order_summary.dart';
-import 'widgets/package_details_form.dart';
-import 'widgets/pick_up_details_form.dart';
-import 'widgets/shipment_going_to_form.dart';
 
 class OrderBookingScreen extends StatelessWidget {
   OrderBookingScreen();
@@ -78,29 +74,6 @@ class OrderBookingScreen extends StatelessWidget {
     );
   }
 
-  Widget changeFormPage(Size screenSize, int navBarIndex) {
-    switch (navBarIndex) {
-      case 0:
-        return PickUpDetailsForm(screenSize, title: 'Pick-up Details');
-        break;
-      case 1:
-        return ShipmentGoingToForm(screenSize, title: 'Shipment Going To');
-        break;
-      case 2:
-        return PackageDetailsForm(screenSize, title: 'Package Details');
-        break;
-      case 3:
-        return ItemRemindersForm(screenSize, title: 'Item Reminders');
-        break;
-      case 4:
-        return OrderSummary(screenSize, title: 'Order Summary');
-        break;
-      default:
-        return PickUpDetailsForm(screenSize, title: 'Pick-up Details');
-        break;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
@@ -132,32 +105,15 @@ class OrderBookingScreen extends StatelessWidget {
               ),
             ],
           ),
-          body: Consumer<OrderItemProvider>(
-            builder: (context, orderItemProvider, child) => Form(
-              key: orderItemProvider.formKey,
-              child: Container(
-                // This sets the background color.
-                width: screenSize.width,
-                height: screenSize.height,
-                alignment: Alignment.topCenter,
-                color: Colors.deepPurple[50],
-                child: SingleChildScrollView(
-                  child: Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Column(
-                      children: <Widget>[
-                        Consumer<FormNavBarProvider>(
-                          builder: (context, navBarIndex, child) =>
-                              changeFormPage(screenSize, navBarIndex.index),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
+          body: Container(
+            // This sets the background color.
+            width: screenSize.width,
+            height: screenSize.height,
+            alignment: Alignment.topCenter,
+            color: Colors.deepPurple[50],
+            child: WholeForm(screenSize),
           ),
-          bottomNavigationBar: FormBottomNavBar(),
+          bottomNavigationBar: const FormBottomNavBar(),
         ),
       ),
     );

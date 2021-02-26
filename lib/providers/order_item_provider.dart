@@ -22,6 +22,13 @@ class OrderItemProvider with ChangeNotifier {
   bool isMsds;
   final formKey = GlobalKey<FormState>();
 
+  bool validateForm() {
+    // Validate the current form page.
+    final isValid = formKey.currentState.validate();
+
+    return isValid;
+  }
+
   void saveForm() {
     formKey.currentState.save();
   }

@@ -37,10 +37,16 @@ class FormBottomNavBar extends StatelessWidget {
           ),
         ],
         onTap: (int newIndex) {
-          Provider.of<OrderItemProvider>(context, listen: false).saveForm();
+          final isFormValid =
+              Provider.of<OrderItemProvider>(context, listen: false)
+                  .validateForm();
 
-          Provider.of<FormNavBarProvider>(context, listen: false)
-              .changeIndex(newIndex);
+          if (isFormValid) {
+            Provider.of<OrderItemProvider>(context, listen: false).saveForm();
+
+            Provider.of<FormNavBarProvider>(context, listen: false)
+                .changeIndex(newIndex);
+          }
         });
   }
 }
