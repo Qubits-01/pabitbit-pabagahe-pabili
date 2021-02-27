@@ -17,12 +17,67 @@ class OrderSummary extends StatelessWidget {
       children: <Widget>[
         InsideFormHeader('Pick-up Details'),
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Row(
               children: <Widget>[
-                const Icon(Icons.arrow_right),
-                Text('Contact Name: '),
-                Text('Gideon Baratheon'),
+                const Icon(Icons.person_outline),
+                Text('Contact Name:',
+                    style: Theme.of(context).textTheme.headline6),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                const Icon(
+                  Icons.map_outlined,
+                  color: Colors.transparent,
+                ),
+                Text('Gideon Baratheon',
+                    style: Theme.of(context).textTheme.bodyText1),
+              ],
+            ),
+          ],
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                const Icon(Icons.map_outlined),
+                Text('Contact Name:',
+                    style: Theme.of(context).textTheme.bodyText1),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                const Icon(
+                  Icons.arrow_right,
+                  color: Colors.transparent,
+                ),
+                Text('Gideon Baratheon',
+                    style: Theme.of(context).textTheme.bodyText1),
+              ],
+            ),
+          ],
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                const Icon(Icons.phone_android_outlined),
+                Text('Contact Name:',
+                    style: Theme.of(context).textTheme.bodyText1),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                const Icon(
+                  Icons.arrow_right,
+                  color: Colors.transparent,
+                ),
+                Text('Gideon Baratheon',
+                    style: Theme.of(context).textTheme.bodyText1),
               ],
             ),
           ],

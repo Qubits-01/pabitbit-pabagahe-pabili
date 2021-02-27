@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../../../providers/order_item_provider.dart';
 
 class BuyMsdsCheckbox extends StatefulWidget {
   const BuyMsdsCheckbox();
@@ -8,8 +11,17 @@ class BuyMsdsCheckbox extends StatefulWidget {
 }
 
 class _BuyMsdsCheckboxState extends State<BuyMsdsCheckbox> {
+  OrderItemProvider _orderItemProvider;
   // ignore: prefer_final_fields
   bool _availMsds = false;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _orderItemProvider = Provider.of<OrderItemProvider>(context, listen: false);
+    _availMsds = _orderItemProvider.isMsds;
+  }
 
   Future<void> _showMsdsPrice(BuildContext context) {
     return showDialog(
@@ -35,33 +47,40 @@ class _BuyMsdsCheckboxState extends State<BuyMsdsCheckbox> {
     );
   }
 
+  void _toggleCheckbox() {
+    _orderItemProvider.isMsds = !_orderItemProvider.isMsds;
+
+    setState(() {
+      _availMsds = !_availMsds;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        Checkbox(
-          value: _availMsds,
-          onChanged: (bool newValue) {
-            setState(() {
-              _availMsds = newValue;
-            });
-          },
-        ),
-        Expanded(
-          child: Text(
-            'Mark check if you want to avail MSDS from us.',
-            style: Theme.of(context).textTheme.bodyText2,
+    return InkWell(
+      onTap: _toggleCheckbox,
+      child: Row(
+        children: <Widget>[
+          Checkbox(
+            value: _availMsds,
+            onChanged: (bool _newValue) => _toggleCheckbox(),
           ),
-        ),
-        IconButton(
-          icon: const Icon(
-            Icons.info_outline,
-            size: 20,
-            color: Colors.black54,
+          Expanded(
+            child: Text(
+              'Mark check if you want to avail MSDS from us.',
+              style: Theme.of(context).textTheme.bodyText2,
+            ),
           ),
-          onPressed: () => _showMsdsPrice(context),
-        ),
-      ],
+          IconButton(
+            icon: const Icon(
+              Icons.info_outline,
+              size: 20,
+              color: Colors.black54,
+            ),
+            onPressed: () => _showMsdsPrice(context),
+          ),
+        ],
+      ),
     );
   }
 }

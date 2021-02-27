@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../../../models/service_type_model.dart' show ServicesTypeEnum;
 import '../../../data/services_type_data.dart';
+import '../../../providers/order_item_provider.dart';
 
+// TODO: Maybe try to make this code (this file) more efficient.
 class ServicesSelection extends StatefulWidget {
   const ServicesSelection();
 
@@ -10,8 +14,20 @@ class ServicesSelection extends StatefulWidget {
 }
 
 class _ServicesSelectionState extends State<ServicesSelection> {
+  OrderItemProvider _orderItemProvider;
   // ignore: prefer_final_fields
   ServicesTypeEnum _serviceType = ServicesTypeEnum.pasabay;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _orderItemProvider = Provider.of<OrderItemProvider>(context, listen: false);
+
+    if (_orderItemProvider.serviceType != null) {
+      _serviceType = _orderItemProvider.serviceType;
+    }
+  }
 
   Future<bool> _showServiceInformation(
     BuildContext context, {
@@ -82,6 +98,8 @@ class _ServicesSelectionState extends State<ServicesSelection> {
                   value: serviceType.serviceTypeEnum,
                   groupValue: _serviceType,
                   onChanged: (ServicesTypeEnum value) {
+                    _orderItemProvider.serviceType = value;
+
                     setState(() {
                       _serviceType = value;
                     });

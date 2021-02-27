@@ -1,7 +1,5 @@
 import 'package:flutter/foundation.dart';
 
-import '../data/services_type_data.dart' show ServicesTypeEnum;
-
 class ServiceTypeModel {
   const ServiceTypeModel({
     @required this.serviceName,
@@ -14,4 +12,12 @@ class ServiceTypeModel {
   final List<String> description;
   final Map<String, double> price;
   final ServicesTypeEnum serviceTypeEnum;
+}
+
+enum ServicesTypeEnum {
+  pasabay,
+  pabitbitPabagahe,
+  pabitbitBiahero,
+  pabiliPabitbitPabagahe,
+  pabiliPabitbitBiahero,
 }

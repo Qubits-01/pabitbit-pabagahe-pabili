@@ -1,13 +1,5 @@
 import '../models/service_type_model.dart';
 
-enum ServicesTypeEnum {
-  pasabay,
-  pabitbitPabagahe,
-  pabitbitBiahero,
-  pabiliPabitbitPabagahe,
-  pabiliPabitbitBiahero,
-}
-
 final List<ServiceTypeModel> servicesTypeData = [
   const ServiceTypeModel(
     serviceName: '🥉  Pasabay',

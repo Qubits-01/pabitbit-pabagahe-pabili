@@ -15,7 +15,7 @@ class ShipmentGoingToForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ShipmentGoingToModel shipmentGoingToModel =
-        Provider.of<OrderItemProvider>(context).shipmentGoingTo;
+        Provider.of<OrderItemProvider>(context, listen: false).shipmentGoingTo;
 
     return FormGroup(
       screenSize,

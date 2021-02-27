@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../models/pick_up_details_model.dart';
 import '../models/shipment_going_to_model.dart';
+import '../models/service_type_model.dart' show ServicesTypeEnum;
 
 class OrderItemProvider with ChangeNotifier {
   OrderItemProvider({
@@ -9,7 +10,8 @@ class OrderItemProvider with ChangeNotifier {
     @required this.date,
     @required this.pickUpDetails,
     @required this.shipmentGoingTo,
-    @required this.packageDetails,
+    @required this.serviceType,
+    @required this.packageWeight,
     this.isMsds = false,
     this.price = 0.00,
   });
@@ -19,7 +21,9 @@ class OrderItemProvider with ChangeNotifier {
   double price;
   PickUpDetailsModel pickUpDetails;
   ShipmentGoingToModel shipmentGoingTo;
-  Map<String, dynamic> packageDetails;
+  double packageWeight;
+  ServicesTypeEnum serviceType;
+
   bool isMsds;
   final formKey = GlobalKey<FormState>();
 

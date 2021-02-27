@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../../../providers/order_item_provider.dart';
 import 'form_group.dart';
 import 'services_selection.dart';
 import 'text_field_with_icon.dart';
@@ -15,15 +17,32 @@ class PackageDetailsForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final orderItemProvider =
+        Provider.of<OrderItemProvider>(context, listen: false);
+
     return FormGroup(
       screenSize,
       title: title,
       children: <Widget>[
-        const TextFieldWithIcon(
+        TextFieldWithIcon(
           icon: Icons.line_weight_outlined,
           labelText: 'Package Weight (in kilograms)',
+          initialValue: orderItemProvider.packageWeight != null
+              ? orderItemProvider.packageWeight.toString()
+              : '',
           keyboardType: TextInputType.number,
           textInputAction: TextInputAction.next,
+          onFieldSubmitted: (String value) {},
+          onSaved: (String value) {
+            orderItemProvider.packageWeight = double.tryParse(value);
+          },
+          validator: (String value) {
+            if (value.isEmpty) {
+              return 'Please provide a Package Weight';
+            }
+
+            return null;
+          },
         ),
         const SizedBox(height: 5),
         const Divider(),
