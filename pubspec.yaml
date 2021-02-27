@@ -24,6 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   provider: ^4.3.3
+  intl: ^0.16.1
   http: ^0.12.2
   curved_navigation_bar: ^0.3.7
 
