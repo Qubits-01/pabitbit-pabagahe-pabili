@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../models/pick_up_details_model.dart' as pick_up_details
+import '../../models/pick_up_details_model.dart' as pick_up_details_model
+    show initValues;
+import '../../models/shipment_going_to_model.dart' as shipment_going_to_model
     show initValues;
 import '../../providers/order_item_provider.dart';
 import '../../providers/form_nav_bar_provider.dart';
@@ -87,8 +89,8 @@ class OrderBookingScreen extends StatelessWidget {
           create: (context) => OrderItemProvider(
             id: null,
             date: null,
-            pickUpDetails: pick_up_details.initValues,
-            shipmentGoingTo: null,
+            pickUpDetails: pick_up_details_model.initValues,
+            shipmentGoingTo: shipment_going_to_model.initValues,
             packageDetails: null,
           ),
         ),

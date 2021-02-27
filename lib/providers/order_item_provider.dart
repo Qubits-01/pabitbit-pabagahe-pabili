@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/pick_up_details_model.dart';
+import '../models/shipment_going_to_model.dart';
 
 class OrderItemProvider with ChangeNotifier {
   OrderItemProvider({
@@ -17,7 +18,7 @@ class OrderItemProvider with ChangeNotifier {
   DateTime date;
   double price;
   PickUpDetailsModel pickUpDetails;
-  Map<String, dynamic> shipmentGoingTo;
+  ShipmentGoingToModel shipmentGoingTo;
   Map<String, dynamic> packageDetails;
   bool isMsds;
   final formKey = GlobalKey<FormState>();
