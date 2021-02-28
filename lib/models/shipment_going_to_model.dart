@@ -12,8 +12,8 @@ class ShipmentGoingToModel {
   String fullName;
   String completeAddress;
   String prefectureOrCity;
-  int postalCode;
-  int contactNumber;
+  String postalCode;
+  String contactNumber;
 }
 
 // ignore: type_annotate_public_apis
@@ -21,6 +21,6 @@ var initValues = ShipmentGoingToModel(
   fullName: '',
   completeAddress: '',
   prefectureOrCity: '',
-  postalCode: null,
-  contactNumber: null,
+  postalCode: '',
+  contactNumber: '',
 );

@@ -81,14 +81,12 @@ class ShipmentGoingToForm extends StatelessWidget {
         TextFieldWithIcon(
           icon: Icons.mail_outline,
           labelText: 'Postal Code',
-          initialValue: shipmentGoingToModel.postalCode != null
-              ? shipmentGoingToModel.postalCode.toString()
-              : '',
+          initialValue: shipmentGoingToModel.postalCode,
           keyboardType: TextInputType.number,
           textInputAction: TextInputAction.next,
           onFieldSubmitted: (String value) {},
           onSaved: (String value) {
-            shipmentGoingToModel.postalCode = int.tryParse(value);
+            shipmentGoingToModel.postalCode = value;
           },
           validator: (String value) {
             if (value.isEmpty) {
@@ -102,14 +100,12 @@ class ShipmentGoingToForm extends StatelessWidget {
         TextFieldWithIcon(
           icon: Icons.phone_android_outlined,
           labelText: 'Contact Number',
-          initialValue: shipmentGoingToModel.contactNumber != null
-              ? shipmentGoingToModel.contactNumber.toString()
-              : '',
+          initialValue: shipmentGoingToModel.contactNumber,
           keyboardType: TextInputType.phone,
           textInputAction: TextInputAction.next,
           onFieldSubmitted: (String value) {},
           onSaved: (String value) {
-            shipmentGoingToModel.contactNumber = int.tryParse(value);
+            shipmentGoingToModel.contactNumber = value;
           },
           validator: (String value) {
             if (value.isEmpty) {

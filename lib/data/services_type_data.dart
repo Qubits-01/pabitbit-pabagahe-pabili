@@ -9,6 +9,9 @@ final List<ServiceTypeModel> servicesTypeData = [
       '',
     ],
     serviceTypeEnum: ServicesTypeEnum.pasabay,
+    price: {
+      'basic': 1200.00,
+    },
   ),
   const ServiceTypeModel(
     serviceName: '🥈  Pabitbit (Pabagahe)',
@@ -18,6 +21,9 @@ final List<ServiceTypeModel> servicesTypeData = [
       '',
     ],
     serviceTypeEnum: ServicesTypeEnum.pabitbitPabagahe,
+    price: {
+      'basic': 1200.00,
+    },
   ),
   const ServiceTypeModel(
     serviceName: '🥇  Pabitbit (Biahero)',
@@ -27,6 +33,10 @@ final List<ServiceTypeModel> servicesTypeData = [
       '',
     ],
     serviceTypeEnum: ServicesTypeEnum.pabitbitBiahero,
+    price: {
+      'futsuMono': 1000.00,
+      'dameMono': 1500.00,
+    },
   ),
   const ServiceTypeModel(
     serviceName: '🏅  Pabili at Pabitbit (Pabagahe)',
@@ -36,6 +46,10 @@ final List<ServiceTypeModel> servicesTypeData = [
       '',
     ],
     serviceTypeEnum: ServicesTypeEnum.pabiliPabitbitPabagahe,
+    price: {
+      'pabiliServiceFee': 50.00,
+      'pabitbitServiceFee': 1200.00,
+    },
   ),
   const ServiceTypeModel(
     serviceName: '🏆  Pabili at Pabitbit (Biahero)',
@@ -45,5 +59,10 @@ final List<ServiceTypeModel> servicesTypeData = [
       '✔ ¥ 1,500 per kilogram (dame mono)',
     ],
     serviceTypeEnum: ServicesTypeEnum.pabiliPabitbitBiahero,
+    price: {
+      'pabiliServiceFee': 500.00,
+      'futsuMono': 1000.00,
+      'dameMono': 1500.00,
+    },
   ),
 ];
